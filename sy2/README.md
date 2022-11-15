@@ -1,30 +1,35 @@
 ## Exp_02 Android开发基础
+### 1. 线性布局
 
-- #### 安装Android Studio【官网下载】
+- #### 思路
+   利用LinearLayout嵌套，第一二行设定水平权重1：1.3：1：1，后两行1：1：1：1
+   
+   - #### ①部分实验代码如下图：
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20205356.png)
 
-- #### 创建Android工程同步至Github
+- #### 实验结果如下图：
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20205500.png)
 
-  - ##### 利用Git Bash命令行进行同步
+### 2.表格布局
 
-    - 在目标文件夹下执行git init创建本地仓库【若已创建过，再次git init会初始化仓库】
-
-    - vim .gitignore 编辑忽略文件
-
-      ![avatar](https://i.ibb.co/Y3RZkX0/01-1.png)
-
-    - 在本地仓库可手动或使用touch命令创建新文件、mkdir创建新文件夹
-
-      在添加（或更新、删除某些文件）后git status 查看仓库情况
-
-      ![avatar](https://i.ibb.co/VgSNpPT/01-2.png)
-
-      根据提示对各个有变动的文件批量（git commit -a 、git add -u）或单独进行commit，add/rm  \<file> 处理至git status时显示working tree clean后，即可使用git push更新至git仓库，如下图：
-
-      ![avatar](https://i.ibb.co/wLvFHLs/01-3.png)
-
+- #### 思路
+    左右对齐在TableRow中添加最左侧icon_block及两个TextView在子元素中进行gravity设置即可完成实验需求
     
+   - #### ①部分实验代码如下图：   
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20205949.png)
 
-  - ##### 利用Git Gui 图形界面进行同步操作【仅做了解，主要还是使用Git Bash操作】
+- #### 实验结果如下图：
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20210004.png)
 
-    - https://juejin.im/post/6844904101608701959
+### 3.约束布局
+
+- #### 思路
+   利用相对定位以及居中定位和倾向实现按钮控件的布局
+   每4个一组排列使用链式（Chains）
+   
+ - #### ①部分实验代码如下图：
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20210049.png)
+
+   - #### ①部分实验代码如下图：
+![avatar](https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20210102.png)
 
