@@ -1,38 +1,14 @@
 # Exp_03 Android UI组件
 
-### 1. SimpleAdapter、ListView
+### 1. ListView的用法
 
 - #### 思路
 
-  ①layout文件中编写单元组件，在MainActivity中利用SimpleAdapter绑定组件进行for循环遍历输出
-
-  ②Toast显示，响应选中事件的列表项取其对应的name属性值
+  在MainActivity中利用SimpleAdapter绑定组件进行for循环遍历输出，使用Toast显示选中的列表项信息
 
 - #### ①部分实验代码：
 
-  ```java
-  view_select = new HashMap<>();
-  
-          //loading name list
-          List<Map<String, Object>> listItems = new ArrayList<>();
-          for (int i = 0; i < names.length; i++) {
-              Map<String, Object> listItem = new HashMap<>();
-              listItem.put("Name", names[i]);
-              listItem.put("Img", imgs[i]);
-              listItems.add(listItem);
-          }
-  
-          //create a SimpleAdapter
-          SimpleAdapter simpleAdapter = new SimpleAdapter(this, listItems, R.layout.list_unit_01, new String[]{"Name", "Img"}, new int[]{R.id.list_unit_01_name, R.id.list_unit_01_img});
-          ListView list = findViewById(R.id.LV_demo);
-  
-          //set Adapter for ListView
-          list.setAdapter(simpleAdapter);
-  		……………………………………
-  ```
-
   ```xml
-  <! -- LIST_UNIT_01 -->
   <LinearLayout
           android:id="@+id/list_unit_01"
           android:layout_width="match_parent"
@@ -54,8 +30,6 @@
               android:gravity="center_vertical|start"
               android:textSize="18sp" />
   
-          <ImageView
-              android:id="@+id/list_unit_01_img"
   ```
 
 - #### ②部分实验代码：
@@ -82,17 +56,15 @@
 
 - #### 实验结果如下图：
 
-- <img src="https://i.ibb.co/8NDBmvs/03-1.png" alt="avatar" style="zoom:20%;" />
+- <img src="https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-15%20203425.png" style="zoom:20%;" />
 
-### 2.自定义布局的AlertDialog
+### 2.创建自定义布局的AlertDialog
 
 - #### 思路：
 
-  ①layout文件中编写alert样式 
-
-  ②通过AlertDialog.builder设置builder.setView
-
-- #### ①部分实验代码：
+ 调用AlertDialog.Builder对象上的setView()将布局添加到AlertDialog
+ 
+- #### 部分实验代码：
 
   ```xml
   <TableLayout
@@ -119,27 +91,13 @@
                   android:textSize="24sp" />
           </TableRow>
   
-          <TableRow
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:gravity="center">
-  
-              <EditText
-                  android:id="@+id/alert_username"
   					…………………………
   ```
   
-- #### ②部分实验代码：
-
-  ```java
-     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-     builder.setView(View.inflate(this, R.layout.alert, null));
-     builder.show();
-  ```
 
 - #### 实验结果如下图：
 
-- <img src="https://i.ibb.co/52SFCfj/03-2.png" alt="avatar" style="zoom:50%; width:750px" />
+- <img src="https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-15%20204334.png" alt="avatar" style="zoom:50%; width:750px" />
 
 ### 3.使用XML定义菜单
 
@@ -149,7 +107,7 @@
 
   ②在MenuActivity中装填对应的菜单并添加到menu中
 
-- #### ①部分实验代码：
+- #### 部分实验代码：
 
   ```xml
   <menu>
@@ -169,26 +127,19 @@
   </menu>
   ```
   
-- #### ②部分实验代码：
 
-  ```java
-  public boolean onCreateOptionsMenu (Menu menu){
-      getMenuInflater().inflate(R.menu.menu_demo, menu);
-      return super.onCrateOptionsMenu(menu);
-  }
-  ```
 
 - #### 实验结果如下图：
 
-- <img src="https://i.ibb.co/71cBQmt/03-3.png" alt="avatar" style="zoom:50%; width:750px" />
+- <img src="https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-15%20204358.png" alt="avatar" style="zoom:50%; width:750px" />
 
-### 4.ActionMode的上下文菜单
+### 4.创建上下文操作模式的上下文菜单
 
 - #### 思路：
 
-  ①创建菜单样式menu_blank
-
-  ②ActionModeActivity中注册View，实现ActionMode.callback回调
+ 使用ListView创建List
+ 
+ 为List Item创建ActionMode形式的上下文菜单
 
 - #### 部分代码：
 
@@ -228,13 +179,6 @@
 
 - #### 实验结果如下图：
 
-- <img src="https://i.ibb.co/5vkCL6H/03-4.png" alt="avatar" style="zoom:50%; width:750px" />
+- <img src="https://github.com/lyhah/Android-/blob/main/andr%E6%88%AA%E5%9B%BE/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-15%20204439.png" style="zoom:50%; width:750px" />
 
-### 5.补充拓展
-
-- 为方便进行测试，本实验还利用OnClick事件响应通过Intent进行Acitivity之间的跳转
-
-- 本实验已有打包Exp_03.apk 已上传至云盘
-- 链接：https://pan.baidu.com/s/17LbJ_3lf8NZbH8gEpNQseA 
-  提取码：3ujx 
 
